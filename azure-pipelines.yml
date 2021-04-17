@@ -50,7 +50,9 @@ stages:
       matrix: $[dependencies.createEnvironments.outputs['matrix_deployment.environments']]
       maxParallel: 1
     pool:
-      vmImage: ubuntu-18.04
+      name: Default
+      demands:
+      - agent.name -equals vmagent
     steps:
     - checkout: self
     - task: PowerShell@2
