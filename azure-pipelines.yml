@@ -86,10 +86,10 @@ stages:
         script: |
           $body = "@
           {
-            "definition":{
+            "definition": {
               "id": $(build_definition_id_02)
             },
-            "sourceBranch": "$(sourceBranch)"
+            "sourceBranch": "$(SOURCEBRANCH_NAME)"
           }
           "@
           
