@@ -3,8 +3,8 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
-trigger:
-- main
+# trigger:
+# - main
 
 variables:
 - group: build_variables
@@ -32,8 +32,8 @@ stages:
         targetType: 'inline'
         script: |
           $newArray=[ordered] @{}
-          $environments = "${env:VAR_ENVIRONMENTS}"
-          $getArray = $environments.split(",")
+          $environmentsName = "${env:VAR_ENVIRONMENTS}"
+          $getArray = $environmentsName.split(",")
 
           foreach ($i in $getArray){
               $newArray += @{
